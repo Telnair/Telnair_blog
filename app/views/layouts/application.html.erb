@@ -13,10 +13,15 @@
     <div class="logo"><%= link_to "Telnair's Blog", root_path %></div>
     <div class="forum-link"><a href="mailto:telnairworld@gmail.com">Contact Me</a></div>
   </header>
-  <nav><a href="#">Code</a>
-    <div class="separator"></div><a href="#">Design</a>
-    <div class="separator"></div><a href="#">Music</a>
-    <div class="separator"></div><a href="#">Other</a>
+  <nav>
+    <% Category.all.each do |c| %>
+    <% if c.id == 1 %>
+      <%= link_to c.name, articles_path(c: c.name) %>
+    <% else %>
+      <div class="separator"></div>
+      <%= link_to c.name, articles_path(c: c.name) %>
+    <% end %>
+    <% end %>
   </nav>
 
   <%= yield %>

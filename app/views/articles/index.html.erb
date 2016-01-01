@@ -6,7 +6,9 @@
     <% end %>
   </div>
   <% end %>
+  <% if user_signed_in? %>
   <div class="button-new">
       <%= link_to "New Article", new_article_path %>
   </div>
+  <% end %>
 </div>
