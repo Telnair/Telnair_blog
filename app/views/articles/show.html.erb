@@ -1,0 +1,12 @@
+<div id="content-wide">
+    <div class="article-show">
+      <h1><%= @article.name %></h1>
+      <em><%= (@article.created_at).strftime("%a %b %Y") %></em>
+      <% unless @article.image.blank? %>
+      <a href="<%= @article.image %>" class="img-wrap"> <img src="<%= @article.image %>" alt="<%= @article.name %>"> </a>
+      <% end %>
+      <p><%= @article.content %> </p>
+      <%= link_to "Edit Article", edit_article_path(@article) %>
+      <%= link_to "Delete Article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
+</div>

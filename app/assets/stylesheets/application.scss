@@ -1,0 +1,328 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import url(https://fonts.googleapis.com/css?family=Ubuntu:500,700,400&subset=latin,cyrillic);
+
+ :root {
+   font-size: 16px;
+ }
+
+ h1 {
+   font-size: 1rem;
+   font-weight: 700;
+   margin: 0;
+ }
+ h2, h3, h4, h5, h6, em {
+   font-size: 0.875rem;
+   font-style: normal;
+   font-weight: 500;
+   margin: 0;
+ }
+ p {
+   font-size: 0.875rem;
+   font-weight: 400;
+   margin: 0;
+ }
+
+ $accent: #64b2ef;
+ $accent-light: #869cad;
+ $light-gray: #f5f8fa;
+ $white: #ffffff;
+ $text-color: #122a3c;
+
+
+ @keyframes Grow {
+   0% {
+     transform: scale(.5);
+     opacity: 0;
+   }
+   100% {
+     transform: scale(1);
+     opacity: 1;
+   }
+ }
+
+ .grow {
+   transition: all .3s ease-in-out;
+   animation-name: "Grow";
+   animation-duration: .2s;
+   animation-iteration-count: 1;
+ }
+
+ // main styles
+
+ * {
+   box-sizing: border-box;
+ }
+
+ .clearfix {
+   &::before, &::after {
+   content: "";
+   display: table;
+   clear: both;
+   }
+ }
+
+ body {
+   font-family: "Ubuntu", sans-serif;
+   color: $text-color;
+   background: $light-gray;
+   line-height: 1.5rem;
+ }
+
+ header {
+   padding: .8rem 3rem;
+   background: $text-color;
+   margin-bottom: 2rem;
+   .logo {
+     a {
+     color: $white;
+     float: left;
+     text-decoration: none;
+     font-weight: 700;
+     letter-spacing: .1rem;
+     }
+   }
+   .forum-link {
+     float: right;
+     transition: all .2s ease-in-out;
+     a {
+       font-size: .875rem;
+       color: $white;
+       text-decoration: none;
+       font-weight: 500;
+       letter-spacing: .1rem;
+       background: $accent;
+       border-radius: .25rem;
+       padding: .5rem 1.3rem;
+       box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+       &:hover {
+         background: darken($accent, 15%);
+       }
+     }
+   }
+   @media screen and (max-width: 420px) {
+     padding: .8rem 1rem;
+   }
+ }
+
+ nav {
+   margin: 0 auto 1rem;
+   text-align: center;
+   a {
+     display: inline-block;
+     font-size: .75rem;
+     color: $text-color;
+     font-weight: 500;
+     text-decoration: none;
+     letter-spacing: .05rem;
+     &:hover {
+       color: $accent;
+     }
+   }
+   .separator {
+     margin: 0 .5rem;
+     display: inline-block;
+     color: $accent-light;
+     width: 5px;
+     height: 5px;
+     background: $accent-light;
+     border-radius: 50%;
+     transform: translate(-20%,-30%);
+   }
+ }
+
+ footer {
+   text-align: center;
+   margin: 2rem auto;
+   p {
+     margin-top: 1rem;
+     color: $accent-light;
+   }
+   hr {
+     width: 2.5rem;
+     height: 2px;
+     background: $accent-light;
+     border: none;
+   }
+ }
+
+
+ #content-mean {
+   text-align: center;
+   max-width: 32rem;
+   margin: 0 auto;
+   padding: 0 2rem;
+   .article {
+     cursor: pointer;
+     margin: .7rem 0;
+     position: relative;
+     width: 100%;
+     padding: .8rem 0;
+     background: $white;
+     box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+     a {
+       text-decoration: none;
+     }
+     &:hover {
+       box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+       h1 {
+         color: $accent;
+       }
+     }
+     &::before {
+       content: "";
+       position: absolute;
+       height: 1.2rem;
+       width: 1.2rem;
+       border-radius: 50%;
+       background: $light-gray;
+       top: 50%;
+       left: -.5rem;
+       transform: translateY(-50%);
+     }
+     &::after {
+       content: "";
+       position: absolute;
+       height: 1.2rem;
+       width: 1.2rem;
+       border-radius: 50%;
+       background: $light-gray;
+       top: 50%;
+       right: -.5rem;
+       transform: translateY(-50%);
+     }
+     h1 {
+       margin: 0;
+       padding: 0;
+       font-weight: 500;
+       letter-spacing: .05rem;
+       font-size: 0.81rem;
+       color: $accent-light;
+     }
+   }
+ }
+
+ .button-new {
+   margin-top: 1.5rem;
+   a {
+     text-decoration: none;
+     color: $white;
+     background: $text-color;
+     border-radius: 10px;
+     padding: .7rem 1.3rem;
+     font-size: .875rem;
+   }
+ }
+
+ #content-wide {
+   max-width: 45rem;
+   margin: 0 auto;
+   .article-show {
+     margin: 0 .5rem;
+     padding: 1.8rem 4.8rem;
+     background: $white;
+     box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+     border-radius: 4px;
+     text-align: center;
+     h1 {
+       font-size: 1.2rem;
+       letter-spacing: .05rem;
+       font-weight: 500;
+     }
+     em {
+       font-size: .7rem;
+       letter-spacing: .05rem;
+       text-transform: uppercase;
+       color: $accent-light;
+       display: block;
+       margin: .5rem 0;
+     }
+     .img-wrap {
+       margin: 0;
+     }
+     img {
+       max-width: 100%;
+       margin: .5rem auto .8rem;
+       border-radius: 4px;
+       border: 10px solid $light-gray;
+     }
+     p {
+       text-align: justify;
+     }
+     a {
+       text-decoration: none;
+       font-size: 0.875rem;
+       margin: 1.5rem .5rem 1rem;
+       display: inline-block;
+       color: $accent-light;
+       &:hover {
+         color: $accent;
+       }
+     }
+     @media screen and (max-width: 650px) {
+       padding: 1.8rem 2rem;
+     }
+   }
+ }
+
+ #content-form {
+   max-width: 45rem;
+   margin: 0 auto;
+   form {
+     margin: 0 .5rem;
+     padding: 2rem 5.3rem;
+     background: $white;
+     box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+     border-radius: 4px;
+     text-align: center;
+     h1 {
+       font-size: 1.2rem;
+       letter-spacing: .1rem;
+       margin-bottom: 2rem;
+     }
+     input, textarea {
+       display: block;
+       margin: .8rem 0;
+       width: 100%;
+       padding: 1rem 2rem;
+       color: $text-color;
+       border-radius: 2rem;
+       background: $light-gray;
+       border: none;
+       outline: none;
+       text-align: left;
+       font-size: .875rem;
+     }
+     textarea {
+       resize: vertical;
+       height: 13rem;
+       margin-bottom: 2rem;
+     }
+     button {
+       outline: none;
+       border: none;
+       color: $white;
+       background: $text-color;
+       border-radius: 10px;
+       padding: .5rem 1.6rem;
+       font-size: 1rem;
+     }
+     @media screen and (max-width: 650px) {
+       padding: 1.8rem 2rem;
+     }
+   }
+ }

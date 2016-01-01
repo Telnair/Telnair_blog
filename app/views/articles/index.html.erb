@@ -1,0 +1,12 @@
+<div id="content-mean">
+  <% @articles.each do |a| %>
+  <div class="article">
+    <%= link_to a do %>
+      <h1> <%= a.name %> </h1>
+    <% end %>
+  </div>
+  <% end %>
+  <div class="button-new">
+      <%= link_to "New Article", new_article_path %>
+  </div>
+</div>

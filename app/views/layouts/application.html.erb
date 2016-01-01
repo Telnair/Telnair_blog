@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TelnairBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Telnair's blog</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header class="clearfix">
+    <div class="logo"><%= link_to "Telnair's Blog", root_path %></div>
+    <div class="forum-link"><a href="mailto:telnairworld@gmail.com">Contact Me</a></div>
+  </header>
+  <nav><a href="#">Code</a>
+    <div class="separator"></div><a href="#">Design</a>
+    <div class="separator"></div><a href="#">Music</a>
+    <div class="separator"></div><a href="#">Other</a>
+  </nav>
 
-<%= yield %>
+  <%= yield %>
+
+  <footer>
+    <hr>
+    <p>&copy Telnair 2015, All rights reserved</p>
+  </footer>
 
 </body>
 </html>
