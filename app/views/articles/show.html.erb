@@ -5,7 +5,7 @@
       <% unless @article.image.blank? %>
       <a href="<%= @article.image %>" class="img-wrap"> <img src="<%= @article.image %>" alt="<%= @article.name %>"> </a>
       <% end %>
-      <p><%= @article.content %> </p>
+      <div class="article_content"><p><%= @article.content %></p> </div>
       <% if user_signed_in? %>
       <%= link_to "Edit Article", edit_article_path(@article) %>
       <%= link_to "Delete Article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %>
