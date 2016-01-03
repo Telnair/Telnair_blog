@@ -2,8 +2,12 @@
     <div class="article-show">
       <h1><%= @article.name %></h1>
       <em><%= (@article.created_at).strftime("%a %b %Y") %></em>
-      <% unless @article.image.blank? %>
+      <% if !@article.image.blank? && !@article.image["youtube"]%>
       <a href="<%= @article.image %>" class="img-wrap"> <img src="<%= @article.image %>" alt="<%= @article.name %>"> </a>
+      <% elsif @article.image["youtube"] %>
+      <div class="video_wrap">
+        <iframe src="<%= @article.image %>" frameborder="0" allowfullscreen></iframe>
+      </div>
       <% end %>
       <div class="article_content"><p><%= @article.content %></p> </div>
       <% if user_signed_in? %>
