@@ -9,7 +9,7 @@
         <iframe src="<%= @article.image %>" frameborder="0" allowfullscreen></iframe>
       </div>
       <% end %>
-      <div class="article_content"><p><%= @article.content %></p> </div>
+      <div class="article_content"> <%= markdown(@article.content) %> </div>
       <% if user_signed_in? %>
       <%= link_to "Edit Article", edit_article_path(@article) %>
       <%= link_to "Delete Article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %>

@@ -260,9 +260,6 @@
        border-radius: 4px;
        border: 10px solid $light-gray;
      }
-     p {
-       text-align: justify;
-     }
      a {
        text-decoration: none;
        font-size: 0.875rem;
@@ -276,6 +273,74 @@
      @media screen and (max-width: 650px) {
        padding: 1.8rem 2rem;
      }
+
+     .article_content {
+       padding: 0 .2rem;
+       line-height: 1.7;
+       text-align: left;
+       letter-spacing: .03rem;
+       margin-top: .5rem;
+       h1 {
+         font-size: 1.3rem;
+         font-weight: 700;
+         margin: 0;
+       }
+       h2, h3, h4, h5, h6 {
+         font-style: normal;
+         font-weight: 500;
+         margin: 0;
+       }
+       h2 {
+         font-size: 1.1rem;
+       }
+       h3 {
+         font-size: 1.0rem;
+       }
+       h4 {
+         font-size: .95rem;
+       }
+       h5 {
+         font-size: .90rem;
+       }
+       em {
+         font-size: 0.9rem;
+         text-transform: none;
+         margin: 0;
+       }
+       hr {
+         height: .1rem;
+         border: none;
+         background-color: lighten($accent-light, 10%);
+       }
+       blockquote {
+         border-left: .2rem solid lighten($accent-light, 10%);
+         padding: .5rem 1rem;
+         margin: .3rem .5rem;
+       }
+       p {
+         font-size: 0.9rem;
+         font-weight: 400;
+         margin: 0;
+       }
+       a {
+         display: inline;
+         margin: 0;
+         padding: 0;
+       }
+       ul, ol {
+         margin: 0;
+         li {
+           font-size: 0.9rem;
+         }
+       }
+       code {
+         background: #f9f9f9;
+         padding: .3rem 1rem;
+         display: block;
+         margin: .1rem .2rem;
+       }
+     }
+
    }
  }
 
@@ -337,9 +402,7 @@
      }
    }
  }
- .article_content {
-   margin-top: .5rem;
- }
+
 
  .video_wrap {
    margin: 1rem auto 1.2rem;
