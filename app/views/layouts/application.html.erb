@@ -17,10 +17,10 @@
   <nav>
     <% Category.all.each do |c| %>
     <% if c.id == 1 %>
-      <%= link_to c.name, articles_path(c: c.name) %>
+      <%= link_to c.name, articles_path(c: c.name) %> <small>( <%= c.articles.count %> )</small>
     <% else %>
       <div class="separator"></div>
-      <%= link_to c.name, articles_path(c: c.name) %>
+      <%= link_to c.name, articles_path(c: c.name) %> <small>( <%= c.articles.count %> )</small>
     <% end %>
     <% end %>
   </nav>
