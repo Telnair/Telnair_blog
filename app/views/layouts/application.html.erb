@@ -3,7 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="uYkNcWlK-nLZzWNrN0jmdPNN9aO2zAnMehrjUsnIrEY" />
-  <title>Telnair's blog</title>
+  <title>Telnair</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -11,19 +11,15 @@
 </head>
 <body>
   <header class="clearfix">
-    <div class="logo"><%= link_to "Telnair's Blog", root_path %></div>
-    <div class="forum-link"><a href="mailto:telnairworld@gmail.com">Contact Me</a></div>
+    <div class="logo"><%= link_to "Telnair", root_path %></div>
+    <div class="forum-link"><a href="#">Menu</a></div>
+    <nav>
+      <%= link_to "Home", root_path %>
+      <%= link_to "Blog", articles_path %>
+      <%= link_to "Work", works_path %>
+      <a href="mailto:telnairworld@gmail.com">Contact</a>
+    </nav>
   </header>
-  <nav>
-    <% Category.all.each do |c| %>
-    <% if c.id == 1 %>
-      <%= link_to c.name, articles_path(c: c.name) %> <small>( <%= c.articles.count %> )</small>
-    <% else %>
-      <div class="separator"></div>
-      <%= link_to c.name, articles_path(c: c.name) %> <small>( <%= c.articles.count %> )</small>
-    <% end %>
-    <% end %>
-  </nav>
 
   <%= yield %>
 

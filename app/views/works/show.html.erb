@@ -1,0 +1,10 @@
+<div class="container-work-show">
+  <h1><%= @work.name %></h1>
+  <p><%= @work.description %></p>
+  <img src="<%= @work.image %>" alt="<%= @work.name %>">
+  <% if user_signed_in? %>
+  <%= link_to "New", new_work_path %>
+  <%= link_to "Edit", edit_work_path(@work) %>
+  <%= link_to "Delete", work_path(@work), method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+</div>

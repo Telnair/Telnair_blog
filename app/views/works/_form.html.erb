@@ -1,0 +1,7 @@
+<%= form_for @work do |f| %>
+<%= f.text_field :name, placeholder: "Title" %>
+<%= f.text_field :image, placeholder: "Image URL" %>
+<%= f.text_field :thumbnail, placeholder: "Thumbnail URL" %>
+<%= f.text_area :description, placeholder: "Description" %>
+<%= button_tag("Create") %>
+<% end %>

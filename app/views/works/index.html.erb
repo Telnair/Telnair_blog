@@ -1,0 +1,14 @@
+<div class="container-work">
+  <% if @works.any? %>
+    <% @works.each do |w| %>
+    <div class="work">
+      <a href="<%= work_path(w) %>">
+        <img src="<%= w.thumbnail %>" alt="<%= w.name %>">
+        <h1><%= w.name %></h1>
+      </a>
+    </div>
+    <% end %>
+  <% else %>
+  <p class="no-works"> Looks like no works were added yet. There will be something soon! </p>
+  <% end %>
+</div>

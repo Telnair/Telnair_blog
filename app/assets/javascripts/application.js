@@ -14,14 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-(function() {
-  $(document).ready(function() {
-    return $(".article").each(function(i) {
-      return setTimeout(function() {
-        return $(".article").eq(i).addClass('grow');
-      }, 50 * i);
-    });
-  });
-
-}).call(this);
