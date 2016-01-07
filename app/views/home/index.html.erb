@@ -1,7 +1,7 @@
 <div class="container">
   <div class="grid grid-big">
     <h1>Hi, I'm Telnair</h1>
-    <%= image_tag "Me_icon.svg" %>
+    <img src="http://i.imgur.com/Yg1E0Ep.png" alt="Icon of mine">
     <p>I’m an enthusiastic learner and spend my time coding, designing, drawing, creating illustrations, videos, playing guitar and basketball. I’m also a student at the faculty of translation for English and German languages. My biggest desire is the day to have more hours and to have enough energy to accomplish all of my plans.</p>
   </div>
   <div class="grid grid-small">
@@ -19,7 +19,7 @@
     <h1>Latest Work</h1>
     <% if @work %>
     <a href="<%= work_path(@work) %>" class="work-last">
-      <img src="<%= @work.image %>" alt="<%= @work.name %>">
+      <img src="<%= @work.thumbnail %>" alt="<%= @work.name %>">
       <cite><%= @work.name %></cite>
     </a>
     <%= link_to "See more", works_path %>
