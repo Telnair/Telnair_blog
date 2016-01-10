@@ -395,6 +395,8 @@ $text-color: #122a3c;
          padding: .3rem 1rem;
          display: block;
          margin: .1rem .2rem;
+         max-width: 100%;
+         word-wrap: break-word;
        }
      }
 
