@@ -561,11 +561,12 @@ $text-color: #122a3c;
     }
     .work-last {
       display: block;
-      width: 100%;
+      width: 90%;
       border: 2px solid transparentize($accent-light, .8);
       overflow: hidden;
       margin: 0 auto;
       margin-bottom: .5rem;
+      margin-top: 1rem;
       position: relative;
       &::after {
         display: none;
@@ -576,7 +577,7 @@ $text-color: #122a3c;
       }
       cite {
         position: absolute;
-        top: 100%;
+        bottom: -50px;
         left: 0;
         font-style: normal;
         display: block;
@@ -589,7 +590,7 @@ $text-color: #122a3c;
       }
       &:hover {
         cite {
-          top: 82%;
+          bottom: 0;
         }
       }
     }
@@ -634,6 +635,14 @@ $text-color: #122a3c;
 
 
 // Work styles
+
+.work_wrapper {
+  max-height: 150px;
+  overflow: hidden;
+}
+.work_wrapper_home {
+  max-height: 200px;
+}
 
 .container-work {
   max-width: 80rem;

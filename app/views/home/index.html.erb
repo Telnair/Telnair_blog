@@ -17,14 +17,18 @@
   </div>
   <div class="grid grid-small">
     <h1>Latest Work</h1>
-    <% if @work %>
-    <a href="<%= work_path(@work) %>" class="work-last">
-      <img src="<%= @work.thumbnail %>" alt="<%= @work.name %>">
-      <cite><%= @work.name %></cite>
-    </a>
-    <%= link_to "See more", works_path %>
+    <% if @works %>
+      <% @works.each do |work| %>
+      <a href="<%= work_path(work) %>" class="work-last">
+        <div class="work_wrapper work_wrapper_home">
+        <img src="<%= work.thumbnail %>" alt="<%= work.name %>">
+        </div>
+        <cite><%= work.name %></cite>
+      </a>
+      <% end %>
+      <%= link_to "See more", works_path %>
     <% else %>
-    <p> No works were added yet... </p>
+      <p> No works were added yet... </p>
     <% end %>
   </div>
 </div>
