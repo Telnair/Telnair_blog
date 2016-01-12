@@ -46,7 +46,8 @@ $text-color: #122a3c;
 
 
  small {
-   color: $accent;
+   font-size: .7rem;
+   color: darken($accent-light, 10%);
    @media screen and (max-width:400px) {
      font-size: .65rem;
    }
@@ -180,6 +181,9 @@ $text-color: #122a3c;
      }
      &:hover {
        color: $accent;
+       small {
+         color: $accent;
+       }
      }
    }
    .separator {
