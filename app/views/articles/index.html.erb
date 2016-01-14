@@ -3,7 +3,7 @@
   <% @articles.each do |a| %>
   <div class="article">
     <%= link_to a do %>
-      <h1> <%= a.name %> </h1>
+      <h1> <%= truncate(a.name, length: 44) %> </h1>
     <% end %>
   </div>
   <% end %>
